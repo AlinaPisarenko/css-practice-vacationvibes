@@ -45,6 +45,10 @@ a {
 .landing {
     background-image: url('./assets/beach.jpeg');
     height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -57,15 +61,20 @@ main {
 }
 
 .main-info {
+    position: absolute;
+    top: 46vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 
 h1 {
     font-size: 10rem;
+    /* transform: translate(-150%) scale(0) rotate(0);
+    animation: slidein 4s ease-in-out infinite 2s; */
 }
 
 .description {
@@ -82,6 +91,13 @@ button {
     background-color: rgba(255, 255, 255, 0.488);
     color: rgb(45, 73, 82);
     width: 10rem;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    width: 30rem;
+    letter-spacing: 1rem;
 }
 
 
@@ -94,21 +110,33 @@ button {
 }
 
 .card {
-    width: 32rem;
-    height: 40rem;
+    width: 40rem;
+    height: 26rem;
+    position: relative;
 }
 
 .card img {
     width: 100%;
-    height: 50%;
+    height: 100%;
     object-fit: cover;
 }
 
 .card-info {
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
     padding: 2rem;
-    height: 18rem;
+    height: 26rem;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.118);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.2s ease-in-out;
+  
+}
+
+.card-info:hover {
+    opacity: 1; 
 }
 
 h3 {
@@ -131,6 +159,59 @@ footer a {
 }
 
 
+@keyframes slidein {
+    0% {
+        transform: translate(-150%) scale(0) rotate(0)
+    }
+    25% {
+        transform: translate(0) scale(1.5)
+    }
+    50% {
+        transform: translate(-100%) scale(1.2) rotate(90deg)
+        }
+    100% {
+        transform: translate(50%) scale(0)
+        }
+
+}
+
+
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: 6rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+        nav {
+           flex-direction: column;
+        }
+    
+        .logo-name {
+            display: none;
+        }
+    
+        a {
+            font-size: 1rem;
+        }
+}
 
 
 
