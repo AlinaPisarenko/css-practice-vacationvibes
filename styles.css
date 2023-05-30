@@ -158,7 +158,7 @@ footer a {
     font-size: 1rem;
 }
 
-
+/* 
 @keyframes slidein {
     0% {
         transform: translate(-150%) scale(0) rotate(0)
@@ -173,7 +173,7 @@ footer a {
         transform: translate(50%) scale(0)
         }
 
-}
+} */
 
 
 @media screen and (max-width: 1200px) {
